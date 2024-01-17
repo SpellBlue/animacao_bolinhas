@@ -77,7 +77,7 @@ class Bolinha{
     }
     controlar=()=>{
         this.colidir()
-        if((this.posx - this.tam) > largurapalco || ((this.posy - this.tam) > alturapalco)){
+        if((this.posx) >= largurapalco || ((this.posy) >= alturapalco)){
             this.remover()
         }
         this.posx+=this.dirx*this.velx
