@@ -4,8 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    overflow: hidden;
+body::-webkit-scrollbar {
+    display: none;
 }
 #m_container{
     margin-left: auto;
@@ -39,13 +39,17 @@ label{
     background-color: rgb(241, 241, 241);
     border-bottom: 3px solid black;
     position: relative;
-    overflow: hidden;
+}
+#palco::-webkit-scrollbar {
+    display: none;
 }
 
 .bolinha{
     position: absolute;
     border-radius: 50%;
-    overflow: hidden;
+}
+.bolinha::-webkit-scrollbar {
+    display: none;
 }
 
 #insert{
