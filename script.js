@@ -34,8 +34,8 @@ class Bolinha{
         this.velx = Math.floor(Math.random()*3) + 0.5
         this.vely = Math.floor(Math.random()*3) + 0.5
 
-        this.dirx = Math.floor(Math.random()*2) > 1 ? 1:-1
-        this.diry = Math.floor(Math.random()*2) > 1 ? 1:-1
+        this.dirx = Math.floor(Math.random()*10) > 5 ? -1:1
+        this.diry = Math.floor(Math.random()*10) > 5 ? -1:1
 
         this.id = Math.floor(Math.random()*99999999999)
         
@@ -67,14 +67,6 @@ class Bolinha{
         this.palco.appendChild(div)
         
     }
-    colidir=()=>{
-        if((this.posx + (this.tam) >= largurapalco) || this.posx <= 0){
-            this.dirx*=-1
-        }
-        if((this.posy + (this.tam) >= alturapalco) || this.posy <= 0){
-            this.diry*=-1
-        }
-    }
     controlar=()=>{
         this.colidir()
         if((this.posx) >= largurapalco || ((this.posy) >= alturapalco)){
@@ -84,13 +76,20 @@ class Bolinha{
         this.posy+=this.diry*this.vely
         this.eu.setAttribute('style',`background-color: rgb(${this.r},${this.g},${this.b});left:${this.posx}px; top:${this.posy}px;width:${this.tam}px; height:${this.tam}px;`)
     }
+    colidir=()=>{
+        if((this.posx + (this.tam) >= largurapalco) || this.posx <= 0){
+            this.dirx*=-1
+        }
+        if((this.posy + (this.tam) >= alturapalco) || this.posy <= 0){
+            this.diry*=-1
+        }
+    }
+    
 }
 
 window.addEventListener('resize',()=>{
     largurapalco = palco.clientWidth
     alturapalco = palco.clientHeight
-    console.log(largurapalco)
-    console.log(alturapalco)
 })
 
 insert.addEventListener('click',()=>{
