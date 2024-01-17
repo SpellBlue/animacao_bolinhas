@@ -40,7 +40,7 @@ class Bolinha{
         this.id = Math.floor(Math.random()*99999999999)
         
         this.desenhar()
-        this.controle = setInterval(this.controlar,50)
+        this.controle = setInterval(this.controlar,10)
         this.eu = document.getElementById(this.id)
         
     }
